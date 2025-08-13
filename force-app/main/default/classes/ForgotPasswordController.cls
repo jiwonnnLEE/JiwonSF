@@ -12,8 +12,8 @@ public with sharing class ForgotPasswordController {
   		pr.setRedirect(true);
   		
   		if (success) {  			
-  			return pr;
+  			return pr;//ㅇㅇ
   		}
-  		return null;
+  		return null; //업데이트 한게 git에 잘 업로드 되는지 확인
   	}
 }
