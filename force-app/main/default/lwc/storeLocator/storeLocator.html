@@ -1,0 +1,18 @@
+<!--
+  @description       : 
+  @author            : jiwon.lee@dkbmc.com
+  @group             : 
+  @last modified on  : 2025-02-07
+  @last modified by  : jiwon.lee@dkbmc.com
+-->
+<template>
+    <lightning-card title="매장 위치 검색">
+        <ul class="store-list">
+            <template for:each={stores} for:item="store">
+                <li key={store.id} onclick={handleStoreClick} data-address={store.address}>{store.name}</li>
+            </template>
+        </ul>
+        
+        <div id="map" class="map-container"></div>
+    </lightning-card>
+</template>

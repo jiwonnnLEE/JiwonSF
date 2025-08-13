@@ -1,0 +1,31 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 2024-10-29
+  @last modified by  : jiwon.lee@dkbmc.com
+-->
+<template>
+    <lightning-card title="Upload Excel File">
+        <!-- 파일 업로드 버튼 -->
+        <div>
+            <lightning-input type="file" label="Select an Excel File" accept=".xls,.xlsx" onchange={handleFileChange}></lightning-input>
+            <template if:true={fileName}>
+                <p>{fileName}</p> <!-- 선택한 파일 이름 표시 -->
+            </template>
+        </div>
+        <!-- 로딩, 에러 발생시 -->
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+        </template>
+        <template if:true={toastMessage}>
+            <lightning-toast-container>
+                <lightning-toast message={toastMessage} variant={toastVariant}></lightning-toast>
+            </lightning-toast-container>
+        </template>
+        <!-- 업로드 버튼 -->
+        <div class="slds-text-align_right">
+            <lightning-button label="Upload" onclick={handleUpload} variant="brand"></lightning-button>
+        </div>
+    </lightning-card>  
+</template>

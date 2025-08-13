@@ -1,0 +1,50 @@
+<!--
+  @description       : 
+  @author            : jiwon.lee@dkbmc.com
+  @group             : 
+  @last modified on  : 2024-10-29
+  @last modified by  : jiwon.lee@dkbmc.com
+-->
+<template>
+    <lightning-card>
+        <div>
+            <c-file-upload></c-file-upload> <!-- fileUpload 컴포넌트 추가-->
+        </div>
+        <!-- 데이터가 존재할 때 리스트 나옴 -->
+         <template if:true={filedData}>
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_striped">
+                <thead>
+                    <tr>
+                        <th scope="col">이름</th>
+                        <th scope="col">재료</th>
+                        <th scope="col">사이트</th>
+                        <th scope="col">계정 이름</th>
+                        <th scope="col">국적</th>
+                        <th scope="col">등급</th>
+                        <th scope="col">산업</th>
+                        <th scope="col">연매출액</th>
+                        <th scope="col">전화번호</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={filedData} for:item="plan">
+                        <tr key={plan.Id}>
+                            <td>{plan.Name}</td>
+                            <td>{plan.Material__c}</td>
+                            <td>{plan.Site__c}</td>
+                            <td>{plan.Account_Name__c}</td>
+                            <td>{plan.Nationality__c}</td>
+                            <td>{plan.Rating__c}</td>
+                            <td>{plan.Industry__c}</td>
+                            <td>{plan.AnnualRevenue__c}</td>
+                            <td>{plan.Phone__c}</td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+         </template>
+         <temlplate if:false={fileData}>
+            <p>No Data Found. {error}</p>
+         </temlplate>
+    </lightning-card>
+</template>

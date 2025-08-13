@@ -1,0 +1,25 @@
+<template>
+    <div>
+        <table>
+            <thead>
+                    <tr>
+                        <th>name</th>
+                        <th>title</th>          
+                        <th>company</th>
+                        <th>phone</th>          
+                        <th>email</th>
+                    </tr>
+                </thead>
+            <template for:each={testList} for:item="item">
+                            <tr key={item.Id}>
+                                <td>{item.Name}</td>
+                                <td>{item.Title}</td>
+                                <td>{item.Company}</td>
+                                <td>{item.Phone}</td>
+                                <td>{item.Email}</td>
+                            </tr>
+                        </template>
+        </table>
+    </div>
+
+</template>

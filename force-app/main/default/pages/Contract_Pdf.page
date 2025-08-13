@@ -1,0 +1,69 @@
+<apex:page standardController="Account" renderAs="pdf" applyHtmlTag="false" showHeader="false" applyBodyTag="false">
+<table style="font-family:Arial Unicode MS; padding-bottom:30px;">
+<tr>
+    <td><apex:image id="thestart" value="{!$Resource.THE_START_LOGO}" width="400" height="60"/></td>
+    <td style="font:24pt; padding-left:10px; padding-right:250px;"></td>
+</tr>
+</table>
+
+<table style="border:0.5px solid #fff; font-family:sans-serif;">
+<tr>
+    <td style="test-align:right; padding-right:10px;">Date</td> 
+    <td style="text-align:right;"><apex:outputText value="{!DAY(TODAY())}-{!MONTH(TODAY())}-{!YEAR(TODAY())}"/></td> 
+</tr>
+<tr>
+
+</tr>
+<tr>
+    <td style="text-align:right; padding-right:20px;">Due Date</td>
+</tr>   
+</table>
+<br></br>
+
+<table style="border:0.5px solid #fff; font-family:Arial Unicode MS;">
+<tr style="color:#fff; background-color:#262626;">
+    <th style="padding-left:5px; padding-right:170px;">BILL TO</th>
+    <th style="background-color:#fff;">BLANK COL</th>
+    <th style="padding-left:5px; padding-right:170px;">SHIP TO</th>    
+</tr>
+<tr>
+    <td style="padding-left:5px;"><apex:outputField value="{!Account.Name}"/></td>
+    <td></td>
+    <td style="padding-left:5px;"><apex:outputField value="{!Account.Name}"/></td>
+</tr>
+<tr>
+    <td style="padding-left:5px;"><apex:outputField value="{!Account.BillingStreet}"/></td>
+    <td></td>
+    <td style="padding-left:5px;"><apex:outputField value="{!Account.BillingStreet}"/></td>
+</tr>
+<tr>
+    <td style="padding-left:5px;"><apex:outputField value="{!Account.BillingCity}"/>, <span><apex:outputField value="{!Account.BillingPostalCode}"/></span></td>
+    <td></td>
+    <td style="padding-left:5px;"><apex:outputField value="{!Account.BillingCity}"/>, <span><apex:outputField value="{!Account.BillingPostalCode}"/></span></td>
+</tr>
+</table>
+<br></br>
+
+<table style="border:solid 0.5px #000; border-top:none; font-family:Arial Unicode MS;">
+<tr>
+    <td style="padding-left:5px; padding-right:400px; background-color:#262626; color:#fff;">계약 약관</td>
+</tr>
+<tr>
+    <td style="padding-left:5px;"></td>
+</tr>
+<tr>
+    <td style="padding-left:5px;">도급인 LG화학㈜ (이하 “갑”)와 수급인 더스타트 (이하 "을")은 다음과 같이 도급계약을 체결한다.</td>
+
+    <td style="padding-left:5px;">본 계약은 각호와 같이 갑이 세일즈포스 CRM 시스템을 도입하는데 있어서 필요한 운영관리 프로그램, 생산관리 프로그램, 모바일 인터페이스 등의  시스템 구축 업무를 을에게 도급하고, 을은 이를 수급하여 성실하게 수행함에 있어, 상호 상생을 추구하고, 양자간의 공정한 거래조건을 정함을 목적으로 한다</td>
+
+    <td style="padding-left:5px;">작성일자 : 2018.  06. 10.</td>
+</tr>
+<tr>
+    <td><br></br></td>
+</tr>
+<tr>
+    <td style="padding-left:5px; padding-bottom:60px;"></td>
+</tr>
+</table>
+
+</apex:page>
